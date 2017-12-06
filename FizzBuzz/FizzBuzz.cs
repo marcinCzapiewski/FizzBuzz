@@ -13,24 +13,19 @@ namespace FizzBuzz
             Console.WriteLine("Welcome to Fizz Buzz");
             Tuple<int, int> limits =  ReadLimits();
 
-            for(int i = limits.Item1; i < limits.Item2; i++)
+            for(int i = limits.Item1; i <= limits.Item2; i++)
             {
-                if (i % 3 == 0 && i % 5 == 0)
+                string test = "";
+                test += (i % 3) == 0 ? "Fizz" : "";
+                test += (i % 5) == 0 ? "Buzz" : "";
+
+                if (test == "")
                 {
-                    Console.WriteLine("Fizz Buzz");
+                    test += i;
                 }
-                else if (i % 3 == 0)
-                {
-                    Console.WriteLine("Fizz");
-                }
-                else if (i % 5 == 0)
-                {
-                    Console.WriteLine("Buzz");
-                }
-                else
-                {
-                    Console.WriteLine("{0}", i);
-                }
+
+                Console.WriteLine($"{test} ");
+
             }
 
             Console.ReadKey();
